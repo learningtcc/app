@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.tiogasolutions.lib:tioga-lib-spring-security:4.1.9">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/tiogasolutions/lib/tioga-lib-spring-security/4.1.9/tioga-lib-spring-security-4.1.9.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/tiogasolutions/lib/tioga-lib-spring-security/4.1.9/tioga-lib-spring-security-4.1.9-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

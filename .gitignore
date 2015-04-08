@@ -1,0 +1,14 @@
+*.iws
+
+#For Linux machines
+**/.gradle/
+**/target/
+**/build/
+**/out/
+
+#And for windows
+**\.gradle/
+**\target/
+**\build/
+**\out/
+.idea/workspace.xml
