@@ -4,7 +4,7 @@
     <facet type="Spring" name="Spring">
       <configuration>
         <fileset id="fileset" name="Spring Application Context" removed="false">
-          <file>file://$MODULE_DIR$/../yak-app-webmvc/src/main/java/org/crazyyak/dev/webmvc/MvcSpringConfig.java</file>
+          <file>file://$MODULE_DIR$/src/main/java/org/tiogasolutions/dev/webmvc/MvcSpringConfig.java</file>
         </fileset>
       </configuration>
     </facet>
