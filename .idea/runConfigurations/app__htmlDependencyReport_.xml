@@ -13,7 +13,7 @@
           <option value="htmlDependencyReport" />
         </list>
       </option>
-      <option name="vmOptions" value="" />
+      <option name="vmOptions" value="-Dno-fail-version-conflict=true" />
     </ExternalSystemSettings>
     <method />
   </configuration>
