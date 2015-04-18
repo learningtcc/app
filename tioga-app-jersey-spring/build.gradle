@@ -29,8 +29,8 @@ project(':tioga-app-jersey-spring') {
   dependencies {
     compile(project(":tioga-app-common"))
 
-    compile("org.tiogasolutions.lib:tioga-lib-servlet:4.1.4")
-    compile("org.tiogasolutions.lib:tioga-lib-spring-security:4.1.9")
+    compile("org.tiogasolutions.lib:tioga-lib-servlet:4.+")
+    compile("org.tiogasolutions.lib:tioga-lib-spring-security:4.+")
 
     compile("org.glassfish.jersey.containers:jersey-container-servlet:2.16")
     compile("org.glassfish.jersey.ext:jersey-mvc-jsp:2.16") {
@@ -64,5 +64,5 @@ project(':tioga-app-jersey-spring') {
     testCompile ("org.testng:testng:6.8.21")
   }
 
-  apply(from: "https://raw.githubusercontent.com/tioga/build-scripts/master/build-config-deployer.gradle?" + System.currentTimeMillis())
+  apply(from: urlCache.get("https://raw.githubusercontent.com/tioga/build-scripts/master/build-config-deployer.gradle"))
 }

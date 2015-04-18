@@ -22,7 +22,7 @@ project(':tioga-app-hibernate') {
   }
 
   dependencies {
-    compile("org.tiogasolutions.dev:tioga-dev-domain:4.1.2")
+    compile("org.tiogasolutions.dev:tioga-dev-domain:4.+")
 
     compile(group: "org.hibernate", name: "hibernate-spatial", version: "4.3") {
       exclude(group: "org.postgis", module: "postgis-jdbc")
@@ -43,5 +43,5 @@ project(':tioga-app-hibernate') {
     testCompile ("org.testng:testng:6.8.21")
   }
 
-  apply(from: "https://raw.githubusercontent.com/tioga/build-scripts/master/build-config-deployer.gradle?" + System.currentTimeMillis())
+  apply(from: urlCache.get("https://raw.githubusercontent.com/tioga/build-scripts/master/build-config-deployer.gradle"))
 }

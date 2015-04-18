@@ -2,10 +2,12 @@
   <library name="Gradle: org.tiogasolutions.lib:tioga-lib-jaxrs:4.1.4">
     <CLASSES>
       <root url="jar://$MAVEN_REPOSITORY$/org/tiogasolutions/lib/tioga-lib-jaxrs/4.1.4/tioga-lib-jaxrs-4.1.4.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.tiogasolutions.lib/tioga-lib-jaxrs/4.1.4/36147abc6d0cb9237c590b0fb35717e6fdba1f19/tioga-lib-jaxrs-4.1.4.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
       <root url="jar://$MAVEN_REPOSITORY$/org/tiogasolutions/lib/tioga-lib-jaxrs/4.1.4/tioga-lib-jaxrs-4.1.4-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.tiogasolutions.lib/tioga-lib-jaxrs/4.1.4/bd1e9aaa249b7204b38bf48c72b4de28bfd758bf/tioga-lib-jaxrs-4.1.4-sources.jar!/" />
     </SOURCES>
   </library>
 </component>
