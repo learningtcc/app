@@ -20,8 +20,8 @@ project(':tioga-app-webmvc') {
 
     compile(project(":tioga-app-common"))
 
-    compile("org.tiogasolutions.lib:tioga-lib-servlet:4.+")
-    compile("org.tiogasolutions.lib:tioga-lib-spring-security:4.+")
+    compile("org.tiogasolutions.lib:tioga-lib-servlet:+")
+    compile("org.tiogasolutions.lib:tioga-lib-spring-security:+")
 
     compile("javax.validation:validation-api:1.1.0.Final")
     compile("org.hibernate:hibernate-validator:5.1.3.Final")

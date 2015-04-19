@@ -22,7 +22,7 @@ project(':tioga-app-hibernate') {
   }
 
   dependencies {
-    compile("org.tiogasolutions.dev:tioga-dev-domain:4.+")
+    compile("org.tiogasolutions.dev:tioga-dev-domain:+")
 
     compile(group: "org.hibernate", name: "hibernate-spatial", version: "4.3") {
       exclude(group: "org.postgis", module: "postgis-jdbc")
