@@ -52,10 +52,10 @@ public abstract class LogUtils {
     initLogback(Level.WARN);
 
     if (configDir == null) {
-      log.warn("Cannot initialize logging, the config directory was not specified.");
+      log.warn("Config directory not specified, using default logback config.");
       return;
     } else if (Files.exists(configDir) == false) {
-      log.warn("Cannot initialize logging, the config directory does not exist: {}", configDir);
+      log.warn("Config directory ({}) does not exist, using default logback config.", configDir);
       return;
     }
 
@@ -63,7 +63,7 @@ public abstract class LogUtils {
     Path logConfigFile = configDir.resolve(logConfigArg);
 
     if (Files.notExists(logConfigFile)) {
-      log.warn("Missing {}, using default config", logConfigFile.toString());
+      log.warn("Missing {}, using default logback config.", logConfigFile.toString());
       return;
     }
 
