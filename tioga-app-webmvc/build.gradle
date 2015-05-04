@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 project(':tioga-app-webmvc') {
-  version = "1.0.7"
+  version = "1.0.8"
 
   dependencies {
 
