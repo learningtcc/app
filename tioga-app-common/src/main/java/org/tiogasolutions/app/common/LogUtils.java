@@ -61,8 +61,13 @@ public abstract class LogUtils {
 
     String logConfigArg = EnvUtils.findProperty(propertyName, fileName);
     Path logConfigFile = configDir.resolve(logConfigArg);
-    log.info("Configure logging from  {}", logConfigFile.toString());
 
+    if (Files.notExists(logConfigFile)) {
+      log.warn("Missing {}, using default config", logConfigFile.toString());
+      return;
+    }
+
+    log.info("Configured logging from  {}", logConfigFile.toString());
     LoggerContext context = (LoggerContext) LoggerFactory.getILoggerFactory();
 
     try {
