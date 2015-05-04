@@ -46,25 +46,25 @@ public abstract class LogUtils {
     log.info("Using default logback config: {} ({})", level, pattern);
   }
 
-  public static void initLogback(Path configDir, String propertyName, String fileName) {
+  public static Path initLogback(Path configDir, String propertyName, String fileName) {
 
     // Configure everything to initially log to the console.
     initLogback(Level.WARN);
 
     if (configDir == null) {
-      log.warn("Config directory not specified, using default logback config.");
-      return;
+      log.info("Config directory not specified, using default logback config.");
+      return null;
     } else if (Files.exists(configDir) == false) {
-      log.warn("Config directory ({}) does not exist, using default logback config.", configDir);
-      return;
+      log.info("Config directory ({}) does not exist, using default logback config.", configDir);
+      return null;
     }
 
     String logConfigArg = EnvUtils.findProperty(propertyName, fileName);
     Path logConfigFile = configDir.resolve(logConfigArg);
 
     if (Files.notExists(logConfigFile)) {
-      log.warn("Missing {}, using default logback config.", logConfigFile.toString());
-      return;
+      log.info("Missing {}, using default logback config.", logConfigFile.toString());
+      return null;
     }
 
     log.info("Configured logging from  {}", logConfigFile.toString());
@@ -82,6 +82,8 @@ public abstract class LogUtils {
     } catch (JoranException ignored) {/* ignored */}
 
     StatusPrinter.printInCaseOfErrorsOrWarnings(context);
+
+    return logConfigFile;
   }
 
 /*
