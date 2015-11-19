@@ -15,6 +15,15 @@
             <option value="$PROJECT_DIR$/tioga-app-webmvc" />
           </set>
         </option>
+        <option name="myModules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/tioga-app-common" />
+            <option value="$PROJECT_DIR$/tioga-app-hibernate" />
+            <option value="$PROJECT_DIR$/tioga-app-jersey-spring" />
+            <option value="$PROJECT_DIR$/tioga-app-webmvc" />
+          </set>
+        </option>
       </GradleProjectSettings>
     </option>
   </component>

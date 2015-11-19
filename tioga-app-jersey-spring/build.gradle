@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 project(':tioga-app-jersey-spring') {
-  version = "1.0.10"
+  version = "1.0.11"
 
   configurations {
     provided
@@ -28,6 +28,7 @@ project(':tioga-app-jersey-spring') {
 
   dependencies {
     compile(project(":tioga-app-common"))
+    compile("org.slf4j:slf4j-api:1.7.7") {force = true}
 
     compile("org.tiogasolutions.lib:tioga-lib-servlet:+")
     compile("org.tiogasolutions.lib:tioga-lib-spring-security:+")
@@ -42,7 +43,6 @@ project(':tioga-app-jersey-spring') {
     compile("org.thymeleaf:thymeleaf-spring4:2.1.4.RELEASE")
     compile("org.thymeleaf.extras:thymeleaf-extras-springsecurity3:2.1.1.RELEASE")
 
-    compile("org.slf4j:slf4j-api:1.7.12") {force = true}
     compile("org.thymeleaf:thymeleaf:2.1.4.RELEASE") {force = true}
 
     compile("org.springframework:spring-tx:4.1.6.RELEASE") {force = true}

@@ -7,8 +7,10 @@ import ch.qos.logback.classic.encoder.PatternLayoutEncoder;
 import ch.qos.logback.classic.joran.JoranConfigurator;
 import ch.qos.logback.classic.spi.ILoggingEvent;
 import ch.qos.logback.core.ConsoleAppender;
+import ch.qos.logback.core.LogbackException;
 import ch.qos.logback.core.joran.spi.JoranException;
 import ch.qos.logback.core.util.StatusPrinter;
+import org.slf4j.ILoggerFactory;
 import org.slf4j.LoggerFactory;
 import org.slf4j.bridge.SLF4JBridgeHandler;
 import org.tiogasolutions.dev.common.EnvUtils;
@@ -26,7 +28,12 @@ public abstract class LogUtils {
     SLF4JBridgeHandler.removeHandlersForRootLogger();
     SLF4JBridgeHandler.install();
 
-    LoggerContext context = (LoggerContext) LoggerFactory.getILoggerFactory();
+    ILoggerFactory factory = LoggerFactory.getILoggerFactory();
+    if (factory instanceof LoggerContext == false) {
+      throw new LogbackException("Expected LOGBACK binding with SLF4J, but another log system has taken the place: " + factory.getClass().getSimpleName());
+    }
+
+    LoggerContext context = (LoggerContext)factory;
 
     PatternLayoutEncoder ple = new PatternLayoutEncoder();
     String pattern = "%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n";

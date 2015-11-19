@@ -14,11 +14,12 @@
  * limitations under the License.
  */
 project(':tioga-app-webmvc') {
-  version = "1.0.9"
+  version = "1.0.10"
 
   dependencies {
 
     compile(project(":tioga-app-common"))
+    compile("org.slf4j:slf4j-api:1.7.7") {force = true}
 
     compile("org.tiogasolutions.lib:tioga-lib-servlet:+")
     compile("org.tiogasolutions.lib:tioga-lib-spring-security:+")
@@ -39,7 +40,6 @@ project(':tioga-app-webmvc') {
     compile("org.springframework:spring-context:4.1.6.RELEASE") {force=true}
     compile("org.springframework:spring-expression:4.1.6.RELEASE") {force=true}
 
-    compile("org.slf4j:slf4j-api:1.7.12") {force = true}
     compile("org.thymeleaf:thymeleaf:2.1.4.RELEASE") {force = true}
     compile("com.fasterxml.jackson.core:jackson-annotations:2.5.1") {force = true}
 

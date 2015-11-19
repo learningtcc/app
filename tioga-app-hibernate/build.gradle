@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 project(':tioga-app-hibernate') {
-  version = "1.0.6"
+  version = "1.0.7"
 
   repositories {
     maven { url("http://download.osgeo.org/webdav/geotools") }
@@ -27,6 +27,8 @@ project(':tioga-app-hibernate') {
     compile(group: "org.hibernate", name: "hibernate-spatial", version: "4.3") {
       exclude(group: "org.postgis", module: "postgis-jdbc")
     }
+
+    compile("org.slf4j:slf4j-api:1.7.7") {force = true}
 
     compile(group: "org.hibernate", name: "hibernate-entitymanager", version: "4.3.8.Final")
     compile(group: "org.hibernate", name: "hibernate-c3p0", version: "4.3.8.Final")
