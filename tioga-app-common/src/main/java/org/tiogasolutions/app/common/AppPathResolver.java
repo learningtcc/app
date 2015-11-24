@@ -1,5 +1,6 @@
 package org.tiogasolutions.app.common;
 
+import org.slf4j.LoggerFactory;
 import org.tiogasolutions.dev.common.EnvUtils;
 import org.tiogasolutions.dev.common.IoUtils;
 import org.tiogasolutions.dev.common.StringUtils;
@@ -7,20 +8,20 @@ import org.tiogasolutions.dev.common.exceptions.ExceptionUtils;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.lang.RuntimeException;import java.lang.String;import java.lang.System;import java.nio.file.Files;
+import java.lang.String;import java.lang.System;import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
 public class AppPathResolver {
 
-  private final Logger logger;
+  private static final org.slf4j.Logger log = LoggerFactory.getLogger(AppUtils.class);
+
   private final String springPropertyName;
   private final String configPropertyName;
   private final String runtimePropertyName;
   private final String profilesPropertyName;
 
-  public AppPathResolver(Logger logger, String prefix) {
-    this.logger = logger;
+  public AppPathResolver(String prefix) {
     this.springPropertyName = prefix + "spring.config";
     this.configPropertyName = prefix + " config.dir";
     this.runtimePropertyName = prefix + "runtime.dir";
@@ -81,7 +82,7 @@ public class AppPathResolver {
     }
 
     System.setProperty(runtimePropertyName, runtimeDir.toString());
-    logger.info("Runtime dir: " + runtimeDir);
+    log.info("Runtime dir: {}", runtimeDir);
 
     return runtimeDir;
   }
@@ -128,7 +129,7 @@ public class AppPathResolver {
     }
 
     System.setProperty(configPropertyName, configDir.toString());
-    logger.info("Config dir: " + configDir);
+    log.info("Config dir: {}", configDir);
 
     return configDir;
   }
@@ -161,8 +162,8 @@ public class AppPathResolver {
 
       } else {
         springConfigPath = springConfig.toUri().toString();
-        logger.info("Spring file: " + springConfigPath);
-        logger.info("  Using the specified spring config file");
+        log.info("Spring file: {}", springConfigPath);
+        log.info("  Using the specified spring config file");
       }
 
     } else {
@@ -170,15 +171,15 @@ public class AppPathResolver {
 
       if (configDir != null && springConfig.toFile().exists()) {
         springConfigPath = springConfig.toUri().toString();
-        logger.info("Spring file: " + springConfigPath);
-        logger.info("  Using the external spring config file");
+        log.info("Spring file: {}", springConfigPath);
+        log.info("  Using the external spring config file");
 
       } else {
         springConfigPath = internalFile;
-        logger.info("Spring file: " + springConfigPath);
-        logger.info("  Using the internal spring config file");
-        logger.info("  Override by using the external spring config file: " + springConfig);
-        logger.info("  Override by specifying the location of the external spring config file with the system property \""+springPropertyName + "\"");
+        log.info("Spring file: {}", springConfigPath);
+        log.info("  Using the internal spring config file");
+        log.info("  Override by using the external spring config file: {}", springConfig);
+        log.info("  Override by specifying the location of the external spring config file with the system property \"{}\"", springPropertyName);
       }
     }
 
@@ -199,12 +200,8 @@ public class AppPathResolver {
     activeProfiles += additionalProfiles;
 
     System.setProperty(profilesPropertyName, activeProfiles);
-    logger.info("Active spring profiles: " + activeProfiles);
+    log.info("Active spring profiles: {}", activeProfiles);
 
     return activeProfiles;
-  }
-
-  public interface Logger {
-    void info(String message);
   }
 }
