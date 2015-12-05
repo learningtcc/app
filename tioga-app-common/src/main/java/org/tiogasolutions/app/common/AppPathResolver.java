@@ -183,7 +183,9 @@ public class AppPathResolver {
       }
     }
 
-    System.setProperty(springPropertyName, springConfigPath);
+    if (springConfigPath != null) {
+      System.setProperty(springPropertyName, springConfigPath);
+    }
 
     return springConfigPath;
   }
