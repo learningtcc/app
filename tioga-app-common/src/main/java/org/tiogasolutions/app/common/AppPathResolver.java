@@ -23,7 +23,7 @@ public class AppPathResolver {
 
   public AppPathResolver(String prefix) {
     this.springPropertyName = prefix + "spring.config";
-    this.configPropertyName = prefix + " config.dir";
+    this.configPropertyName = prefix + "config.dir";
     this.runtimePropertyName = prefix + "runtime.dir";
     this.profilesPropertyName = prefix + "active.profiles";
   }
