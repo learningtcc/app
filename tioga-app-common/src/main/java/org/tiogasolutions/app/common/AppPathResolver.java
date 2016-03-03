@@ -190,11 +190,11 @@ public class AppPathResolver {
     return springConfigPath;
   }
 
-  public String resolveSpringProfiles() {
+  public String[] resolveSpringProfiles() {
     return resolveSpringProfiles("hosted");
   }
 
-  public String resolveSpringProfiles(String additionalProfiles) {
+  public String[] resolveSpringProfiles(String additionalProfiles) {
 
     String activeProfiles = EnvUtils.findProperty(profilesPropertyName, "");
 
@@ -204,6 +204,11 @@ public class AppPathResolver {
     System.setProperty(profilesPropertyName, activeProfiles);
     log.info("Active spring profiles: {}", activeProfiles);
 
-    return activeProfiles;
+    String[] values = activeProfiles.split(",");
+    for (int i = 0; i < values.length; i++) {
+      values[i] = values[i].trim();
+    }
+    return values;
   }
 }
+
