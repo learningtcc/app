@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<module external.linked.project.id=":tioga-app-hibernate" external.linked.project.path="$MODULE_DIR$" external.root.project.path="$MODULE_DIR$/.." external.system.id="GRADLE" external.system.module.group="org.tiogasolutions.app" external.system.module.version="1.1.0" type="JAVA_MODULE" version="4">
+<module external.linked.project.id=":tioga-app-hibernate" external.linked.project.path="$MODULE_DIR$" external.root.project.path="$MODULE_DIR$/.." external.system.id="GRADLE" external.system.module.group="org.tiogasolutions.app" external.system.module.version="1.1.3" type="JAVA_MODULE" version="4">
   <component name="NewModuleRootManager" inherit-compiler-output="false">
     <output url="file://$MODULE_DIR$/build/classes/main" />
     <output-test url="file://$MODULE_DIR$/build/classes/test" />
@@ -51,27 +51,7 @@
     <orderEntry type="library" name="Gradle: org.slf4j:jul-to-slf4j:1.7.7" level="project" />
     <orderEntry type="library" name="Gradle: ch.qos.logback:logback-classic:1.1.3" level="project" />
     <orderEntry type="library" name="Gradle: ch.qos.logback:logback-core:1.1.3" level="project" />
-    <orderEntry type="module-library">
-      <library name="Gradle: org.tiogasolutions.dev:tioga-dev-domain:4.2.1">
-        <CLASSES>
-          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.tiogasolutions.dev/tioga-dev-domain/4.2.1/7b4ef26f00cfae50fae8f9a69108c22e39bfd215/tioga-dev-domain-4.2.1.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES>
-          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.tiogasolutions.dev/tioga-dev-domain/4.2.1/7a2292b61ff3229e96d5f687d3f47a410c40b2e/tioga-dev-domain-4.2.1-sources.jar!/" />
-        </SOURCES>
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library name="Gradle: org.tiogasolutions.dev:tioga-dev-common:5.1.1">
-        <CLASSES>
-          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.tiogasolutions.dev/tioga-dev-common/5.1.1/88eecabd9ab86dce78e5893bc96c12747856fa98/tioga-dev-common-5.1.1.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES>
-          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.tiogasolutions.dev/tioga-dev-common/5.1.1/257aa243bd8112ebc683566c883ceeb7fcff2d33/tioga-dev-common-5.1.1-sources.jar!/" />
-        </SOURCES>
-      </library>
-    </orderEntry>
+    <orderEntry type="library" name="Gradle: org.tiogasolutions.dev:tioga-dev-domain:4.2.4" level="project" />
+    <orderEntry type="library" name="Gradle: org.tiogasolutions.dev:tioga-dev-common:5.1.4" level="project" />
   </component>
 </module>

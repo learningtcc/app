@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 project(':tioga-app-common') {
-  version = "3.0.0"
+  version = "3.0.1"
 
   dependencies {
-    compile("org.tiogasolutions.dev:tioga-dev-common:+")
+    compile("org.tiogasolutions.dev:tioga-dev-jackson:+")
     testCompile ("org.testng:testng:6.8.21")
   }
 

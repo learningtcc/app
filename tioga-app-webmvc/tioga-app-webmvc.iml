@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<module external.linked.project.id=":tioga-app-webmvc" external.linked.project.path="$MODULE_DIR$" external.root.project.path="$MODULE_DIR$/.." external.system.id="GRADLE" external.system.module.group="org.tiogasolutions.app" external.system.module.version="1.1.0" type="JAVA_MODULE" version="4">
+<module external.linked.project.id=":tioga-app-webmvc" external.linked.project.path="$MODULE_DIR$" external.root.project.path="$MODULE_DIR$/.." external.system.id="GRADLE" external.system.module.group="org.tiogasolutions.app" external.system.module.version="1.1.3" type="JAVA_MODULE" version="4">
   <component name="FacetManager">
     <facet type="Spring" name="Spring">
       <configuration>
@@ -65,82 +65,11 @@
     <orderEntry type="library" name="Gradle: org.slf4j:jul-to-slf4j:1.7.7" level="project" />
     <orderEntry type="library" name="Gradle: ch.qos.logback:logback-classic:1.1.3" level="project" />
     <orderEntry type="library" name="Gradle: ch.qos.logback:logback-core:1.1.3" level="project" />
-    <orderEntry type="module-library">
-      <library name="Gradle: org.tiogasolutions.lib:tioga-lib-servlet:4.2.0">
-        <CLASSES>
-          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.tiogasolutions.lib/tioga-lib-servlet/4.2.0/fbbc5d0caecc7e840b4509e807f2df0180ba1b81/tioga-lib-servlet-4.2.0.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES>
-          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.tiogasolutions.lib/tioga-lib-servlet/4.2.0/64a326c400a7525da5991b26eed3d165cb1af9b2/tioga-lib-servlet-4.2.0-sources.jar!/" />
-        </SOURCES>
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library name="Gradle: org.tiogasolutions.lib:tioga-lib-spring-security:4.2.0">
-        <CLASSES>
-          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.tiogasolutions.lib/tioga-lib-spring-security/4.2.0/704ca8c834a0bf0f896036f7c1112bbff66aea17/tioga-lib-spring-security-4.2.0.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES>
-          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.tiogasolutions.lib/tioga-lib-spring-security/4.2.0/849826b177d1b4b09166560efd2d8626a4cf0876/tioga-lib-spring-security-4.2.0-sources.jar!/" />
-        </SOURCES>
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library name="Gradle: org.tiogasolutions.dev:tioga-dev-common:5.1.1">
-        <CLASSES>
-          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.tiogasolutions.dev/tioga-dev-common/5.1.1/88eecabd9ab86dce78e5893bc96c12747856fa98/tioga-dev-common-5.1.1.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES>
-          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.tiogasolutions.dev/tioga-dev-common/5.1.1/257aa243bd8112ebc683566c883ceeb7fcff2d33/tioga-dev-common-5.1.1-sources.jar!/" />
-        </SOURCES>
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library name="Gradle: org.tiogasolutions.lib:tioga-lib-jaxrs-jackson:5.2.1">
-        <CLASSES>
-          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.tiogasolutions.lib/tioga-lib-jaxrs-jackson/5.2.1/3ceb0f8969069042cc1a59f9be2f359542fcae7e/tioga-lib-jaxrs-jackson-5.2.1.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES>
-          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.tiogasolutions.lib/tioga-lib-jaxrs-jackson/5.2.1/c87fe4cfa45e3f71dc25a1f84cd897cbf83e6f72/tioga-lib-jaxrs-jackson-5.2.1-sources.jar!/" />
-        </SOURCES>
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library name="Gradle: org.tiogasolutions.dev:tioga-dev-jackson:4.2.1">
-        <CLASSES>
-          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.tiogasolutions.dev/tioga-dev-jackson/4.2.1/2f283ea93f32a496d1da73dad31adc3a5672f701/tioga-dev-jackson-4.2.1.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES>
-          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.tiogasolutions.dev/tioga-dev-jackson/4.2.1/9d89f448853d379bc24141d2ee799bbaed25132c/tioga-dev-jackson-4.2.1-sources.jar!/" />
-        </SOURCES>
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library name="Gradle: org.tiogasolutions.lib:tioga-lib-jaxrs:4.3.0">
-        <CLASSES>
-          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.tiogasolutions.lib/tioga-lib-jaxrs/4.3.0/2b43a4e7078b9c1f2d206cde0e5b9716b82694af/tioga-lib-jaxrs-4.3.0.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES>
-          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.tiogasolutions.lib/tioga-lib-jaxrs/4.3.0/a2794e4028cd502434611ffbc313ff21cfb347f5/tioga-lib-jaxrs-4.3.0-sources.jar!/" />
-        </SOURCES>
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library name="Gradle: org.tiogasolutions.dev:tioga-dev-domain:4.2.1">
-        <CLASSES>
-          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.tiogasolutions.dev/tioga-dev-domain/4.2.1/7b4ef26f00cfae50fae8f9a69108c22e39bfd215/tioga-dev-domain-4.2.1.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES>
-          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.tiogasolutions.dev/tioga-dev-domain/4.2.1/7a2292b61ff3229e96d5f687d3f47a410c40b2e/tioga-dev-domain-4.2.1-sources.jar!/" />
-        </SOURCES>
-      </library>
-    </orderEntry>
+    <orderEntry type="library" name="Gradle: org.tiogasolutions.lib:tioga-lib-servlet:4.2.1" level="project" />
+    <orderEntry type="library" name="Gradle: org.tiogasolutions.lib:tioga-lib-spring-security:4.2.2" level="project" />
+    <orderEntry type="library" name="Gradle: org.tiogasolutions.dev:tioga-dev-jackson:4.2.4" level="project" />
+    <orderEntry type="library" name="Gradle: org.tiogasolutions.dev:tioga-dev-common:5.1.4" level="project" />
+    <orderEntry type="library" name="Gradle: org.tiogasolutions.lib:tioga-lib-jaxrs:5.0.0" level="project" />
+    <orderEntry type="library" name="Gradle: org.tiogasolutions.dev:tioga-dev-domain:4.2.4" level="project" />
   </component>
 </module>
