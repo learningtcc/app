@@ -62,8 +62,8 @@ public class StandardRequestFilter<T> implements ContainerRequestFilter {
         throw ApiException.unauthorized();
       }
 
-      T domain = domainResolver.getDomain();
-      String domainName = domainResolver.getDomainName();
+      T domain = domainResolver.getDomain(requestContext);
+      String domainName = domainResolver.getDomainName(requestContext);
 
       executionManager.newContext(domainName, domain, uriInfo, httpHeaders, request, securityContext, providers);
 

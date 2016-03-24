@@ -2,7 +2,6 @@ package org.tiogasolutions.app.standard.jackson;
 
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.Module;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.tiogasolutions.dev.jackson.TiogaJacksonInjectable;
 import org.tiogasolutions.dev.jackson.TiogaJacksonModule;
 import org.tiogasolutions.dev.jackson.TiogaJacksonObjectMapper;
@@ -11,19 +10,14 @@ import java.util.*;
 
 public class StandardObjectMapper extends TiogaJacksonObjectMapper {
 
-  @Autowired
-  public StandardObjectMapper(Collection<? extends Module> modules,
-                              Collection<? extends TiogaJacksonInjectable> injectables) {
+    public StandardObjectMapper() {
+        this(Collections.singletonList(new TiogaJacksonModule()), Collections.emptyList());
+    }
 
-    super(merge(new TiogaJacksonModule(), modules), injectables);
-    configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-  }
+    public StandardObjectMapper(Collection<? extends Module> modules,
+                                Collection<? extends TiogaJacksonInjectable> injectables) {
 
-  private static Collection<? extends Module> merge(Module first, Collection<? extends Module> others) {
-    List<Module> modules = new ArrayList<>();
-    modules.add(first);
-    modules.addAll(others);
-    return modules;
-  }
-
+        super(modules, injectables);
+        configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+    }
 }

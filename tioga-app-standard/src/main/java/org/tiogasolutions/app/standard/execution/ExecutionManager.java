@@ -1,6 +1,5 @@
 package org.tiogasolutions.app.standard.execution;
 
-import org.springframework.stereotype.Component;
 import org.tiogasolutions.dev.common.exceptions.ApiException;
 
 import javax.ws.rs.core.HttpHeaders;
@@ -9,7 +8,6 @@ import javax.ws.rs.core.SecurityContext;
 import javax.ws.rs.core.UriInfo;
 import javax.ws.rs.ext.Providers;
 
-@Component
 public class ExecutionManager<T> implements ExecutionAccessor<T> {
 
   private final ThreadLocal<ExecutionContext<T>> threadLocal = new ThreadLocal<>();
