@@ -18,7 +18,7 @@
 <suite name="Build Suite">
   <test verbose="2" name="Build" annotations="JDK">
     <packages>
-       <package name="org.tiogasolutions.app.common.*"/>
+       <package name="org.tiogasolutions.app.standard.*"/>
     </packages>
   </test>
 </suite>
