@@ -98,10 +98,7 @@ public class DefaultSessionStore implements SessionStore {
     }
 
     @Override
-    public NewCookie newSessionCookie(ContainerRequestContext requestContext) {
-        UriInfo uriInfo = requestContext.getUriInfo();
-        Session session = getSession(requestContext);
-
+    public NewCookie newSessionCookie(Session session, UriInfo uriInfo) {
         int maxAge = (session == null) ? 0 : session.getSecondsToExpire();
         String sessionId = (session == null) ? null : session.getSessionId();
 

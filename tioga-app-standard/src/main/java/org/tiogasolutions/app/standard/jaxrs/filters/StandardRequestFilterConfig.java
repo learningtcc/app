@@ -1,20 +1,34 @@
 package org.tiogasolutions.app.standard.jaxrs.filters;
 
-import org.springframework.beans.factory.annotation.Required;
+import org.tiogasolutions.app.standard.jaxrs.auth.RequestFilterAuthenticator;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class StandardRequestFilterConfig {
 
     private String unauthorizedQueryParamName;
     private String unauthorizedQueryParamValue;
-    private boolean sessionRequired;
-    private String authenticationScheme;
     private String unauthorizedPath;
     private boolean redirectUnauthorized;
+
+    private Map<String,RequestFilterAuthenticator> securedUris = new HashMap<>();
 
     public StandardRequestFilterConfig() {
     }
 
-    @Required
+    public Map<String, RequestFilterAuthenticator> getSecuredUris() {
+        return securedUris;
+    }
+    public void setSecuredUris(Map<String, RequestFilterAuthenticator> securedUris) {
+        this.securedUris = securedUris;
+    }
+    public void registerAuthenticator(RequestFilterAuthenticator authenticator, String...uriRegExs) {
+        for (String uriRegEx : uriRegExs) {
+            securedUris.put(uriRegEx, authenticator);
+        }
+    }
+
     public String getUnauthorizedQueryParamName() {
         return unauthorizedQueryParamName;
     }
@@ -22,7 +36,6 @@ public class StandardRequestFilterConfig {
         this.unauthorizedQueryParamName = unauthorizedQueryParamName;
     }
 
-    @Required
     public String getUnauthorizedQueryParamValue() {
         return unauthorizedQueryParamValue;
     }
@@ -30,23 +43,6 @@ public class StandardRequestFilterConfig {
         this.unauthorizedQueryParamValue = unauthorizedQueryParamValue;
     }
 
-    @Required
-    public boolean isSessionRequired() {
-        return sessionRequired;
-    }
-    public void setSessionRequired(boolean sessionRequired) {
-        this.sessionRequired = sessionRequired;
-    }
-
-    @Required
-    public String getAuthenticationScheme() {
-        return authenticationScheme;
-    }
-    public void setAuthenticationScheme(String authenticationScheme) {
-        this.authenticationScheme = authenticationScheme;
-    }
-
-    @Required
     public String getUnauthorizedPath() {
         return unauthorizedPath;
     }
@@ -54,11 +50,11 @@ public class StandardRequestFilterConfig {
         this.unauthorizedPath = unauthorizedPath;
     }
 
-    @Required
     public boolean isRedirectUnauthorized() {
         return redirectUnauthorized;
     }
     public void setRedirectUnauthorized(boolean redirectUnauthorized) {
         this.redirectUnauthorized = redirectUnauthorized;
     }
+
 }

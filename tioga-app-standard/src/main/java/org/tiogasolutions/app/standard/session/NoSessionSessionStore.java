@@ -3,6 +3,7 @@ package org.tiogasolutions.app.standard.session;
 import javax.ws.rs.container.ContainerRequestContext;
 import javax.ws.rs.core.Cookie;
 import javax.ws.rs.core.NewCookie;
+import javax.ws.rs.core.UriInfo;
 
 public class NoSessionSessionStore implements SessionStore {
 
@@ -32,7 +33,7 @@ public class NoSessionSessionStore implements SessionStore {
     }
 
     @Override
-    public NewCookie newSessionCookie(ContainerRequestContext requestContext) {
+    public NewCookie newSessionCookie(Session session, UriInfo uriInfo) {
         return new NewCookie(getCookieName(), "no-cookie", "/", null, null, 0, true, true);
     }
 }
