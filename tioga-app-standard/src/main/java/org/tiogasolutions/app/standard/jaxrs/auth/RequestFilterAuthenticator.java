@@ -5,6 +5,7 @@ import javax.ws.rs.core.SecurityContext;
 
 public interface RequestFilterAuthenticator {
 
+    String getAuthenticationScheme();
     SecurityContext authenticate(ContainerRequestContext requestContext);
 
 }

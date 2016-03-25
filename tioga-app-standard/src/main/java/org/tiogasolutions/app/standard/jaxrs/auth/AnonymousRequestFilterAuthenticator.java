@@ -11,6 +11,11 @@ public class AnonymousRequestFilterAuthenticator implements RequestFilterAuthent
     }
 
     @Override
+    public String getAuthenticationScheme() {
+        return "ANONYMOUS";
+    }
+
+    @Override
     public SecurityContext authenticate(ContainerRequestContext requestContext) {
         return requestContext.getSecurityContext();
     }
