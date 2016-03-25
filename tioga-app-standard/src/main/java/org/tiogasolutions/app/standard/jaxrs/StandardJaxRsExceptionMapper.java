@@ -4,8 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.tiogasolutions.lib.jaxrs.providers.TiogaJaxRsExceptionMapper;
 import org.tiogasolutions.notify.notifier.Notifier;
 
-import javax.ws.rs.ext.Provider;
-
 public class StandardJaxRsExceptionMapper extends TiogaJaxRsExceptionMapper {
 
   private final Notifier notifier;

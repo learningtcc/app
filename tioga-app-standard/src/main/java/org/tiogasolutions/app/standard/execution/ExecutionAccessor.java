@@ -7,9 +7,17 @@ package org.tiogasolutions.app.standard.execution;
  */
 public interface ExecutionAccessor<T> {
 
-  /** Indicates if a context is bound to the current context */
-  boolean isContextSet();
+    /**
+     * Indicates if a context is bound to the current context
+     *
+     * @return true if the context is set.
+     */
+    boolean isContextSet();
 
-  /** Returns the current context bound to the current thread. */
-  ExecutionContext<T> getContext();
+    /**
+     * Returns the current context bound to the current thread.
+     *
+     * @return the execution context.
+     */
+    ExecutionContext<T> getContext();
 }

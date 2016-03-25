@@ -2,6 +2,7 @@ package org.tiogasolutions.app.standard.jaxrs.filters;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.tiogasolutions.app.standard.execution.ExecutionManager;
+import org.tiogasolutions.app.standard.jaxrs.auth.StandardAuthenticationResponseFactory;
 import org.tiogasolutions.app.standard.jaxrs.auth.RequestFilterAuthenticator;
 import org.tiogasolutions.dev.common.exceptions.ApiException;
 import org.tiogasolutions.dev.common.exceptions.ApiUnauthorizedException;
@@ -15,9 +16,7 @@ import javax.ws.rs.container.PreMatching;
 import javax.ws.rs.core.*;
 import javax.ws.rs.ext.Providers;
 import java.io.IOException;
-import java.net.URI;
 import java.security.Principal;
-import java.util.Map;
 import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -44,12 +43,14 @@ public class StandardRequestFilter<T> implements ContainerRequestFilter {
     private final ExecutionManager<T> executionManager;
     private final StandardRequestFilterConfig filterConfig;
     private final StandardRequestFilterDomainResolver<T> domainResolver;
+    private final StandardAuthenticationResponseFactory authenticationResponseFactory;
 
     @Autowired
-    public StandardRequestFilter(StandardRequestFilterConfig filterConfig, ExecutionManager<T> executionManager, StandardRequestFilterDomainResolver<T> domainResolver) {
+    public StandardRequestFilter(StandardRequestFilterConfig filterConfig, ExecutionManager<T> executionManager, StandardRequestFilterDomainResolver<T> domainResolver, StandardAuthenticationResponseFactory authenticationResponseFactory) {
         this.filterConfig = filterConfig;
         this.domainResolver = domainResolver;
         this.executionManager = executionManager;
+        this.authenticationResponseFactory = authenticationResponseFactory;
     }
 
     @Override
@@ -64,20 +65,9 @@ public class StandardRequestFilter<T> implements ContainerRequestFilter {
             executionManager.newContext(domainName, domain, uriInfo, httpHeaders, request, newSecurityContext, providers);
 
         } catch (NotAuthorizedException | ApiUnauthorizedException  e) {
-            if (filterConfig.isRedirectUnauthorized()) {
-                URI uri = requestContext.getUriInfo()
-                        .getBaseUriBuilder()
-                        .path(filterConfig.getUnauthorizedPath())
-                        .queryParam(filterConfig.getUnauthorizedQueryParamName(),
-                                filterConfig.getUnauthorizedQueryParamValue()).build();
 
-                Response response = Response.seeOther(uri).build();
-                requestContext.abortWith(response);
-
-            } else {
-                Response response = Response.status(401).build();
-                requestContext.abortWith(response);
-            }
+            Response response = authenticationResponseFactory.createForbiddenResponse(requestContext);
+            requestContext.abortWith(response);
 
         } catch (ApiException e) {
             Response response = Response.status(e.getStatusCode()).build();

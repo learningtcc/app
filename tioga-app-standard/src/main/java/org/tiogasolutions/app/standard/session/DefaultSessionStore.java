@@ -1,7 +1,6 @@
 package org.tiogasolutions.app.standard.session;
 
 import org.tiogasolutions.dev.common.ReflectUtils;
-import org.tiogasolutions.dev.common.StringUtils;
 
 import javax.ws.rs.container.ContainerRequestContext;
 import javax.ws.rs.core.Cookie;
@@ -17,16 +16,38 @@ public class DefaultSessionStore implements SessionStore {
     private final long maxDuration;
     private final String cookieName;
 
+    private final String path;
+    private final String domain;
+    private final String comment;
+    private final boolean secure;
+    private final boolean httpOnly;
+
     private Map<String, Session> map = new HashMap<>();
 
     /**
      * Creates a new session store
-     *
      * @param maxDuration the life of the session in milliseconds
+     * @param cookieName the name of the cookie used to track a session
      */
     public DefaultSessionStore(long maxDuration, String cookieName) {
         this.maxDuration = maxDuration;
         this.cookieName = cookieName;
+
+        this.path = "/";
+        this.domain = null;
+        this.comment = null;
+        this.secure = true;
+        this.httpOnly = true;
+    }
+
+    public DefaultSessionStore(long maxDuration, String cookieName, String path, String domain, String comment, boolean secure, boolean httpOnly) {
+        this.maxDuration = maxDuration;
+        this.cookieName = cookieName;
+        this.path = path;
+        this.domain = domain;
+        this.comment = comment;
+        this.secure = secure;
+        this.httpOnly = httpOnly;
     }
 
     @Override
@@ -46,6 +67,26 @@ public class DefaultSessionStore implements SessionStore {
 
     public long getMaxDuration() {
         return maxDuration;
+    }
+
+    public String getPath() {
+        return path;
+    }
+
+    public String getDomain() {
+        return domain;
+    }
+
+    public String getComment() {
+        return comment;
+    }
+
+    public boolean isSecure() {
+        return secure;
+    }
+
+    public boolean isHttpOnly() {
+        return httpOnly;
     }
 
     public Session getSession(String sessionId) {
@@ -101,17 +142,6 @@ public class DefaultSessionStore implements SessionStore {
     public NewCookie newSessionCookie(Session session, UriInfo uriInfo) {
         int maxAge = (session == null) ? 0 : session.getSecondsToExpire();
         String sessionId = (session == null) ? null : session.getSessionId();
-
-        String path = uriInfo.getBaseUri().toString();
-        int pos = path.indexOf("://");
-        if (pos >= 0) {
-            pos = path.indexOf("/", pos + 3);
-            path = StringUtils.substring(path, pos, -1);
-        }
-        if (StringUtils.isBlank(path)) {
-            path = "/";
-        }
-
-        return new NewCookie(getCookieName(), sessionId, path, null, null, maxAge, true, true);
+        return new NewCookie(getCookieName(), sessionId, path, domain, comment, maxAge, secure, httpOnly);
     }
 }
