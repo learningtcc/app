@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app.iml" filepath="$PROJECT_DIR$/.idea/modules/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/tioga-app-common/tioga-app-common.iml" filepath="$PROJECT_DIR$/.idea/modules/tioga-app-common/tioga-app-common.iml" group="tioga-app-common" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/tioga-app-common/tioga-app-common_main.iml" filepath="$PROJECT_DIR$/.idea/modules/tioga-app-common/tioga-app-common_main.iml" group="tioga-app-common" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/tioga-app-common/tioga-app-common_test.iml" filepath="$PROJECT_DIR$/.idea/modules/tioga-app-common/tioga-app-common_test.iml" group="tioga-app-common" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/tioga-app-hibernate/tioga-app-hibernate.iml" filepath="$PROJECT_DIR$/.idea/modules/tioga-app-hibernate/tioga-app-hibernate.iml" group="tioga-app-hibernate" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/tioga-app-hibernate/tioga-app-hibernate_main.iml" filepath="$PROJECT_DIR$/.idea/modules/tioga-app-hibernate/tioga-app-hibernate_main.iml" group="tioga-app-hibernate" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/tioga-app-hibernate/tioga-app-hibernate_test.iml" filepath="$PROJECT_DIR$/.idea/modules/tioga-app-hibernate/tioga-app-hibernate_test.iml" group="tioga-app-hibernate" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/tioga-app-jersey-spring/tioga-app-jersey-spring.iml" filepath="$PROJECT_DIR$/.idea/modules/tioga-app-jersey-spring/tioga-app-jersey-spring.iml" group="tioga-app-jersey-spring" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/tioga-app-jersey-spring/tioga-app-jersey-spring_main.iml" filepath="$PROJECT_DIR$/.idea/modules/tioga-app-jersey-spring/tioga-app-jersey-spring_main.iml" group="tioga-app-jersey-spring" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/tioga-app-jersey-spring/tioga-app-jersey-spring_test.iml" filepath="$PROJECT_DIR$/.idea/modules/tioga-app-jersey-spring/tioga-app-jersey-spring_test.iml" group="tioga-app-jersey-spring" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/tioga-app-standard/tioga-app-standard.iml" filepath="$PROJECT_DIR$/.idea/modules/tioga-app-standard/tioga-app-standard.iml" group="tioga-app-standard" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/tioga-app-standard/tioga-app-standard_main.iml" filepath="$PROJECT_DIR$/.idea/modules/tioga-app-standard/tioga-app-standard_main.iml" group="tioga-app-standard" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/tioga-app-standard/tioga-app-standard_test.iml" filepath="$PROJECT_DIR$/.idea/modules/tioga-app-standard/tioga-app-standard_test.iml" group="tioga-app-standard" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/tioga-app-webmvc/tioga-app-webmvc.iml" filepath="$PROJECT_DIR$/.idea/modules/tioga-app-webmvc/tioga-app-webmvc.iml" group="tioga-app-webmvc" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/tioga-app-webmvc/tioga-app-webmvc_main.iml" filepath="$PROJECT_DIR$/.idea/modules/tioga-app-webmvc/tioga-app-webmvc_main.iml" group="tioga-app-webmvc" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/tioga-app-webmvc/tioga-app-webmvc_test.iml" filepath="$PROJECT_DIR$/.idea/modules/tioga-app-webmvc/tioga-app-webmvc_test.iml" group="tioga-app-webmvc" />
+    </modules>
+  </component>
+</project>

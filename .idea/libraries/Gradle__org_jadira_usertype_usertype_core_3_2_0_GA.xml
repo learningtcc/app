@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.jadira.usertype:usertype.core:3.2.0.GA">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jadira.usertype/usertype.core/3.2.0.GA/27075b8c305fbf4c7fed6bfcbe4b6df1b25a5be/usertype.core-3.2.0.GA.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jadira.usertype/usertype.core/3.2.0.GA/e5876aa4febe2b54d333e74e82977ac4a2050399/usertype.core-3.2.0.GA-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
