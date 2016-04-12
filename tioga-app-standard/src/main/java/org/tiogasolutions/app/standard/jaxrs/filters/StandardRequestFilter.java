@@ -57,7 +57,14 @@ public class StandardRequestFilter<T> implements ContainerRequestFilter {
 
     @Override
     public void filter(ContainerRequestContext requestContext) throws IOException {
+        if ("OPTIONS".equalsIgnoreCase(requestContext.getMethod())) {
+            // do not authenticate OPTIONS calls.
+        } else {
+            authenticate(requestContext);
+        }
+    }
 
+    public void authenticate(ContainerRequestContext requestContext) {
         RequestFilterAuthenticator authenticator = getRequestFilterAuthenticator();
         String authenticationScheme = authenticator.getAuthenticationScheme();
 
@@ -74,7 +81,7 @@ public class StandardRequestFilter<T> implements ContainerRequestFilter {
             Response response = authenticationResponseFactory.createForbiddenResponse(requestContext);
             requestContext.abortWith(response);
 
-        } catch (NotAuthorizedException | ApiUnauthorizedException  e) {
+        } catch (NotAuthorizedException | ApiUnauthorizedException e) {
             Response response = authenticationResponseFactory.createUnauthorizedResponse(requestContext, authenticationScheme);
             requestContext.abortWith(response);
 
