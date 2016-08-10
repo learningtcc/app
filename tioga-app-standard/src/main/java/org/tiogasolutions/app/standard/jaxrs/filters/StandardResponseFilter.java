@@ -10,29 +10,40 @@ import javax.ws.rs.container.ContainerResponseContext;
 import javax.ws.rs.container.ContainerResponseFilter;
 import javax.ws.rs.container.PreMatching;
 import java.io.IOException;
+import java.util.List;
 import java.util.Map;
 
 @PreMatching
 @Priority(Priorities.AUTHENTICATION)
 public class StandardResponseFilter implements ContainerResponseFilter {
 
-  private final ExecutionManager executionManager;
-  private final StandardResponseFilterConfig filterConfig;
+    private static final String ACCESS_CONTROL_ALLOW_HEADERS = "Access-Control-Allow-Headers";
+    private static final String ACCESS_CONTROL_REQUEST_HEADERS = "Access-Control-Request-Headers";
 
-  @Autowired
-  public StandardResponseFilter(ExecutionManager executionManager, StandardResponseFilterConfig filterConfig) {
-    this.filterConfig = filterConfig;
-    this.executionManager = executionManager;
-  }
+    private final ExecutionManager executionManager;
+    private final StandardResponseFilterConfig filterConfig;
 
-  @Override
-  public void filter(ContainerRequestContext requestContext, ContainerResponseContext responseContext) throws IOException {
-
-    for (Map.Entry<String,String> entry : filterConfig.getExtraHeaders().entrySet()) {
-      responseContext.getHeaders().add(entry.getKey(), entry.getValue());
+    @Autowired
+    public StandardResponseFilter(ExecutionManager executionManager, StandardResponseFilterConfig filterConfig) {
+        this.filterConfig = filterConfig;
+        this.executionManager = executionManager;
     }
 
-    // Clear everything when we are all done.
-    executionManager.clearContext();
-  }
+    @Override
+    public void filter(ContainerRequestContext requestContext, ContainerResponseContext responseContext) throws IOException {
+
+        for (Map.Entry<String, String> entry : filterConfig.getExtraHeaders().entrySet()) {
+            responseContext.getHeaders().add(entry.getKey(), entry.getValue());
+        }
+
+        if (filterConfig.isEchoingAccessControlRequestHeaders()) {
+            List<String> accessHeaders = requestContext.getHeaders().get(ACCESS_CONTROL_REQUEST_HEADERS);
+            if (accessHeaders != null) {
+                responseContext.getHeaders().addAll(ACCESS_CONTROL_ALLOW_HEADERS, accessHeaders.toArray());
+            }
+        }
+
+        // Clear everything when we are all done.
+        executionManager.clearContext();
+    }
 }
