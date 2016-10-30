@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 project(':tioga-app-jersey-spring') {
-  version = "1.1.5"
+  version = "1.1.6"
 
   configurations {
     provided

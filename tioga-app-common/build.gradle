@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 project(':tioga-app-common') {
-  version = "3.2.0"
+  version = "3.2.1"
 
   dependencies {
     compile("org.tiogasolutions.dev:tioga-dev-common:+")
