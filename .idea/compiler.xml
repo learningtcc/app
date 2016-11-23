@@ -27,6 +27,8 @@
       <module name="tioga-app-jersey-spring_test" target="1.8" />
       <module name="tioga-app-standard_main" target="1.8" />
       <module name="tioga-app-standard_test" target="1.8" />
+      <module name="tioga-app-thymeleaf_main" target="1.8" />
+      <module name="tioga-app-thymeleaf_test" target="1.8" />
       <module name="tioga-app-webmvc_main" target="1.8" />
       <module name="tioga-app-webmvc_test" target="1.8" />
     </bytecodeTargetLevel>

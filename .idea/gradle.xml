@@ -13,8 +13,8 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/tioga-app-common" />
             <option value="$PROJECT_DIR$/tioga-app-hibernate" />
-            <option value="$PROJECT_DIR$/tioga-app-jersey-spring" />
             <option value="$PROJECT_DIR$/tioga-app-standard" />
+            <option value="$PROJECT_DIR$/tioga-app-thymeleaf" />
             <option value="$PROJECT_DIR$/tioga-app-webmvc" />
           </set>
         </option>

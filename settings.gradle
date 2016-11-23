@@ -14,4 +14,4 @@
  * limitations under the License.
  */
 
-include "tioga-app-hibernate", "tioga-app-jersey-spring", "tioga-app-webmvc", "tioga-app-common", "tioga-app-standard"
+include "tioga-app-hibernate", "tioga-app-thymeleaf", /*"tioga-app-jersey-spring",*/ "tioga-app-webmvc", "tioga-app-common", "tioga-app-standard"

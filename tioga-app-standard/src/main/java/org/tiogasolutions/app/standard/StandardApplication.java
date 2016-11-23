@@ -1,12 +1,9 @@
 package org.tiogasolutions.app.standard;
 
-import org.tiogasolutions.app.standard.jaxrs.StandardJaxRsExceptionMapper;
 import org.tiogasolutions.app.standard.jaxrs.StandardReaderWriterProvider;
-import org.tiogasolutions.app.standard.jaxrs.filters.JerseySpringWorkaroundFilter;
 import org.tiogasolutions.app.standard.jaxrs.filters.StandardRequestFilter;
 import org.tiogasolutions.app.standard.jaxrs.filters.StandardResponseFilter;
 import org.tiogasolutions.app.standard.view.embedded.EmbeddedContentMessageBodyWriter;
-import org.tiogasolutions.app.standard.view.thymeleaf.ThymeleafMessageBodyWriter;
 
 import javax.ws.rs.core.Application;
 import java.util.HashMap;
@@ -27,21 +24,16 @@ public class StandardApplication extends Application {
   }
 
   public void addClasses() {
-    // Exception mapper
-    classes.add(StandardJaxRsExceptionMapper.class);
 
     // Message body writers
     classes.add(EmbeddedContentMessageBodyWriter.class);
-    classes.add(ThymeleafMessageBodyWriter.class);
 
     // Reader-Writer providers
     classes.add(StandardReaderWriterProvider.class);
-    classes.add(StandardJaxRsExceptionMapper.class);
 
     // Filters
     classes.add(StandardRequestFilter.class);
     classes.add(StandardResponseFilter.class);
-    classes.add(JerseySpringWorkaroundFilter.class);
   }
 
   public void addProperties() {
