@@ -15,7 +15,7 @@
  */
 project(':tioga-app-standard') {
 
-    version = "1.0.4"
+    version = "1.0.5"
 
     dependencies {
         // compile("org.tiogasolutions.notify:tioga-notify-notifier:+")

@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.tiogasolutions.lib:tioga-lib-spring-security:5.0.1.DEPRECATED">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/tiogasolutions/lib/tioga-lib-spring-security/5.0.1.DEPRECATED/tioga-lib-spring-security-5.0.1.DEPRECATED.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/tiogasolutions/lib/tioga-lib-spring-security/5.0.1.DEPRECATED/tioga-lib-spring-security-5.0.1.DEPRECATED-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

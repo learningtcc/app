@@ -15,7 +15,7 @@
  */
 project(':tioga-app-thymeleaf') {
 
-    version = "1.0.0"
+    version = "1.0.1"
 
     dependencies {
         compile("org.tiogasolutions.lib:tioga-lib-jaxrs:+")
